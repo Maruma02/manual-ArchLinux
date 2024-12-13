@@ -50,9 +50,34 @@ exit
 ```bash
 fdisk -l
 ```
+Мы увидим примерно это:
+```bash
+Output
 
+Disk /dev/sda: 20GiB, 21474836480 bytes, 41943040 sectors
+Disk model: QEMU HARDDISK
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
 
-
-
-
+Disk /dev/loop0: 662.69 MiB, 694882304 bytes, 1357192 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
 ```
+
+В данном случае мы будем разбивать диск /dev/sda у вас же может он быть другим или если вы устанавливаете на ssd, то он может выглядеть вот так - "nvme0n1"
+тогда вы вместо "/dev/sda" будете писать "/dev/nvme0n1".
+
+Все остальное можно игонорировать.
+
+Приступим к разметке диска:
+```bash
+cfdisk /dev/sda  #sda - диск который вы будете размечать
+```
+
+
+
+
+
+
