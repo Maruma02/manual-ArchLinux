@@ -83,6 +83,6 @@ cfdisk /dev/sda  #sda - диск который вы будете размеча
 
 
 Рассмотрим наш графический интерфейс:
-
+![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/photo_2024-12-14_13-00-59.jpg)
 
 
