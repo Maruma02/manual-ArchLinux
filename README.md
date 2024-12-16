@@ -240,8 +240,31 @@ passwd
 Нужно дважды ввести пароль, будь внимателен так как ты его не увидишь пока вводишь.
 
 # 4.3 Установка GRUB загрузчика.
+Устанавливем пакеты GRUB и EFIbootmanager:
+```bash
+pacman -S grub efibootmgr os-prober mtools
+```
+os-prober - сканирует существующие диски на наличие других ОС
 
- 
+Создаем директорию для загрузчика и монтируем "/dev/sda1":
+```bash
+mkdir /boot/efi
+mount /dev/sda1 /boot/efi
+```
+Устанавливаем загрузчик:
+```bash
+grub-install --target=x86_64-efi --bootloader-id=grub_uefi
+```
+```
+Output
+
+Installing for x86_64-efi platform.
+Installation finished. No error reported
+```
+Генерируем конфигурационный файл "/boot/grub/grub.cfg":
+```bash
+grub-mkconfig -o /boot/grub/grub.cfg
+```
 # 6. Создание учетной записи обычного пользователя и чучуть о них
 
 # The End
