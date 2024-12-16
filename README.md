@@ -139,3 +139,10 @@ mkfs.ext4 /dev/sda4
 
 # 3.Установка Arch Linux
 
+
+Настроим конфиг pacman, это не обязательно но появятся прикольные плюшки:
+
+```bash
+nano /etc/pacman.conf
+```
+
