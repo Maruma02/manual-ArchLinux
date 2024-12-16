@@ -219,7 +219,7 @@ echo LANG=ru_RU.UTF-8 > /etc/locale.conf
 # 4.2 Настройка компьютера
 Задаем имя нашего компьютера пусть это будет "ArchInst":
 ```bash
-echo arch-pc > /etc/hostname
+echo ArchInst > /etc/hostname
 ```
 
 Редактируем "hosts":
