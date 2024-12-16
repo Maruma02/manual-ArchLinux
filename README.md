@@ -145,4 +145,20 @@ mkfs.ext4 /dev/sda4
 ```bash
 nano /etc/pacman.conf
 ```
+Далее нужно найти Misc options и сделать так же как показанно:
+```
+#UseSyslog
+Color
+ILoveCandy
+#NoProgressBar
+CheckSpace
+#VerbosePkgLists
+ParallelDownloads = 10
+```
+Синхронизируем репозиторий для установки пакетов в будующем:
+```bash
+pacman -Syy
+```
+
+
 
