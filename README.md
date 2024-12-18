@@ -274,44 +274,106 @@ grub-mkconfig -o /boot/grub/grub.cfg
 # 5. Установка необходимых пакетов и окружающих сред. 
 ## Установка двайверов и полезных пакетов:
 Для видеокарт от Intel:
+```bash
 sudo pacman -S lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader intel-media-driver libva-intel-driver xf86-video-intel
-
+```
 
 Для видеокарт от NVIDIA:
+```bash
 sudo pacman -S nvidia nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader lib32-opencl-nvidia opencl-nvidia libxnvctrl
-
+```
 
 Для видеокарт от AMD/ATI:
+```bash
 sudo pacman -S lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader xf86-video-ati
-
+```
 
 Доустанавливаем пакеты:
 ```bash
-pacman -S Networkmanager vim 
+pacman -S Networkmanager vim firefox 
 ```
 Активируем Networkmanager:
 ```bash
 systemctl enable NetworkManager
 ```
 ## 5.1 Установка Gnome:
+На любое окружение есть темы так что не обязательно они будут выглядеть 1 в 1 как на картинках!
 Устанавливаем xorg в качестве сервера отображения:
 ```bash
-pacman -S xorg-server xorg-apps
+pacman -S xorg xorg-server xorg-apps
 ```
 Далее устанавливаем само окружение gnome и несколько доп пакетов:
 ```bash
-pacman -S gnome gnome-extra 
+pacman -S gnome gnome-extra thunar
 ```
 И активируем дисплейный менеджер:
 ```bash
 systemctl enable gdm
 ```
+![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/)
 В чем их различие можно посмотреть [вот здесь](#про-дисплейные-менеджеры)
 Мы также будем использовать другие для других окружений
 
 # 5.2 Установка KDE Plasma
+На любое окружение есть темы так что не обязательно они будут выглядеть 1 в 1 как на картинках!
+Устанавливаем xorg в качестве сервера отображения:
+```bash
+pacman -S xorg xorg-server xorg-apps 
+```
+Установка Kde plasma:
+```bash
+pacman -S plasma plasma-wayland-session sddm nemo
+#можете добавить kde-applications но там много ненужного легче будет докачать то что нужно
+```
+Активируем дисплейный менеджер
+```bash
+systemctl enable sddm.service
+```
+В чем их различие можно посмотреть [вот здесь](#про-дисплейные-менеджеры)
+## 5.3 Установка Xfce
+На любое окружение есть темы так что не обязательно они будут выглядеть 1 в 1 как на картинках!
+Устанавливаем xorg в качестве сервера отображения:
+```bash
+pacman -S xorg xorg-server xorg-apps 
+```
+Установка Xfce:
+```bash
+sudo pacman -S xfce4-goodies file-roller  leafpad epdfview galculator lightdm lightdm-gtk-greeter
+ lightdm-gtk-greeter-settings capitaine-cursors arc-gtk-theme xdg-user-dirs-gtk
+```
+Активируем дисплейный менеджер
+```bash
+systemctl enable lightdm
+```
 
+![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/)
+## 5.4 Установка Hyperland
+На любое окружение есть темы так что не обязательно они будут выглядеть 1 в 1 как на картинках!
 
+![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/)
+## 5.5 Установка LXQT
+На любое окружение есть темы так что не обязательно они будут выглядеть 1 в 1 как на картинках!
+Этот вариант лучше ставить если у вас слабый компьютер или ноутбук.
+Устанавливаем xorg в качестве сервера отображения:
+```bash
+pacman -S xorg xorg-server xorg-apps
+```
+Устанавливаем само окружение:
+```bash
+sudo pacman -S lxqt xdg-utils ttf-freefont sddm
+```
+Установка доп. библиотек:
+```bash
+sudo pacman -S libpulse libstatgrab libsysstat lm_sensors oxygen-icons pavucontrol-qt
+```
+Этой системой я не пользовался(не было надобности так что, что в xdg-utils я без понятия.
+
+Активируем дисплейный менеджер
+```bash
+systemctl enable sddm.service
+```
+
+![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/)
 # 6. Создание учетной записи обычного пользователя и чучуть о них
 
 # The End
@@ -331,7 +393,8 @@ reboot
 # Про дисплейные менеджеры
 [Информацию взял тут](https://dzen.ru/a/Y6iCA91VZx3sMYYO)
 
-GDM (Gnome Display Manager или экранный менеджер GNOME)
+
+### GDM (Gnome Display Manager или экранный менеджер GNOME)
 
 Помимо ввода логина и пароля пользователю доступна смена среды рабочего стола, смена графического сервера  действия по работе с сеансом (спящий режим, перезагрузка, выключение).
 
@@ -340,19 +403,33 @@ GDM (Gnome Display Manager или экранный менеджер GNOME)
 
 Шесть расширений в GNOME которые устанавливаю всегда
 
-LightDM (Light Display Manager)
+### LightDM (Light Display Manager)
 
-Он просто существует его мы использовать не будем.
+Легкий, быстрый и расширяемый дисплейный менеджер. Функциональность LightDM такая же, как и у GDM, но
+в отличие от собрата он имеет кодовую базу попроще и не тянет в дистрибутив зависимости GNOME.
+До версии 17.10 LightDM являлся дисплейным менеджером по-умолчанию в Ubuntu.
 
-LXDM (LX Display Manager)
+### LXDM (LX Display Manager)
 Разрабатывался как альтернатива и замена для GDM. Главными преимуществами является легковесность и энергоэффективность (что делает удобным его использование на ноутбуках).
 Таким образом, при помощи LXDM и используемой среды рабочего окружения LXDE можно оживить тот ПК или ноутбук,
 который кажется совсем устаревшим в плане производительности оборудования.
 
-SDDM (Simple Desktop Display Manager)
+### SDDM (Simple Desktop Display Manager)
 
 Дисплейный менеджер, который пришел на смену KDE Display Manager (KDM). Написан он на C++ и полностью интегрируется в среду рабочего стола KDE Plasma 5. 
 
 Внешний вид SDDM
 Это тот дисплейный менеджер, который я выбираю всегда при работе с вновь установленным Archlinux.  Очевидным преимуществом является простота изменения и отсутствие перегруженности интерфейса. Недостатком является то, что «из коробки» SDDM выглядит очень не очень. Сразу тянется рука подкрутить что-нибудь.
 
+# Файловые менеджеры
+Их существует достаточно много, но здесь я покажу только те которые нравятся мне. Я не знаю чем они отличаются так что выбирать буду по визуалу. 
+
+Thunar:
+![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/)
+Dolphine:
+![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/)
+Nemo:
+![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/)
+
+
+Все картинки взяты из интернета для примерного понимания.
