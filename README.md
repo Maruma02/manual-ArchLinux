@@ -290,7 +290,7 @@ sudo pacman -S lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader li
 
 Доустанавливаем пакеты:
 ```bash
-pacman -S Networkmanager vim firefox 
+pacman -S Networkmanager vim firefox git python3
 ```
 Активируем Networkmanager:
 ```bash
@@ -349,7 +349,29 @@ systemctl enable lightdm
 ![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/)
 ## 5.4 Установка Hyperland
 На любое окружение есть темы так что не обязательно они будут выглядеть 1 в 1 как на картинках!
+Подробнее про установку и настройку вы можете прочитать на [официальной странице HyprlandWiki](https://wiki.hyprland.org/Getting-Started/Installation/)
 
+Устанавливаем xorg в качестве сервера отображения:
+```bash
+pacman -S Wayland
+```
+Установка Hyprland:
+```bash
+sudo pacman -S hyprland hyprpaper xdg-desktop-portal-hyprland waybar wofi kitty sddm
+```
+Активируем дисплейный менеджер
+```bash
+systemctl enable sddm.service
+```
+
+Фото взято из [этого репозитория](https://github.com/JaKooLit/Arch-Hyprland), очень красивый конфиг Hyprland который устанавливается вот так:
+```bash
+git clone --depth=1 https://github.com/JaKooLit/Arch-Hyprland.git ~/Arch-Hyprland
+cd ~/Arch-Hyprland
+chmod +x install.sh
+./install.sh
+```
+Лучше перейдите на его репозиторий и сами посмотрите что вам потребуется выбирать во время установки.
 ![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/)
 ## 5.5 Установка LXQT
 На любое окружение есть темы так что не обязательно они будут выглядеть 1 в 1 как на картинках!
@@ -374,7 +396,21 @@ systemctl enable sddm.service
 ```
 
 ![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/)
-# 6. Создание учетной записи обычного пользователя и чучуть о них
+# 6. Создание учетной записи обычного пользователя и чучуть о них.
+Кроме того, мы можем предоставить этой учетной записи привилегии sudo. Напишите свое имя вместо “User123”.
+```bash
+useradd -m -G wheel user123
+```
+-m — создаёт домашний каталог пользователя по адресу /home/[имя пользователя]. В каталоге создаётся набор стартовых файлов, владельцем которых назначается новый пользователь.
+
+-G — определяет список дополнительных групп, в которые входит пользователь. По умолчанию новый пользователь добавляется только в начальную группу.
+
+wheel — группа администрирования, обычно используемая для предоставления доступа к sudo и su.
+
+Задаем пароль новому пользователю:
+```bash
+wheel — группа администрирования, обычно используемая для предоставления доступа к sudo и su.
+```
 
 # The End
 После того как ты сделал все что указанно выше кончай заниматься этой фигней старина:
@@ -433,3 +469,10 @@ Nemo:
 
 
 Все картинки взяты из интернета для примерного понимания.
+
+# Установка yay/aur:
+```bash
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+```
