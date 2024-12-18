@@ -330,6 +330,7 @@ pacman -S plasma plasma-wayland-session sddm nemo
 systemctl enable sddm.service
 ```
 В чем их различие можно посмотреть [вот здесь](#про-дисплейные-менеджеры)
+![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/)
 ## 5.3 Установка Xfce
 На любое окружение есть темы так что не обязательно они будут выглядеть 1 в 1 как на картинках!
 Устанавливаем xorg в качестве сервера отображения:
