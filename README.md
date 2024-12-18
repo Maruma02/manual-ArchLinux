@@ -310,7 +310,7 @@ pacman -S gnome gnome-extra thunar
 ```bash
 systemctl enable gdm
 ```
-![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/)
+![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/Gnome.jpg)
 В чем их различие можно посмотреть [вот здесь](#про-дисплейные-менеджеры)
 Мы также будем использовать другие для других окружений
 
@@ -330,7 +330,7 @@ pacman -S plasma plasma-wayland-session sddm nemo
 systemctl enable sddm.service
 ```
 В чем их различие можно посмотреть [вот здесь](#про-дисплейные-менеджеры)
-![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/)
+![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/KDE-Plasma.jpg)
 ## 5.3 Установка Xfce
 На любое окружение есть темы так что не обязательно они будут выглядеть 1 в 1 как на картинках!
 Устанавливаем xorg в качестве сервера отображения:
@@ -347,7 +347,7 @@ sudo pacman -S xfce4-goodies file-roller  leafpad epdfview galculator lightdm li
 systemctl enable lightdm
 ```
 
-![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/)
+![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/Xfce.jpg)
 ## 5.4 Установка Hyperland
 На любое окружение есть темы так что не обязательно они будут выглядеть 1 в 1 как на картинках!
 Подробнее про установку и настройку вы можете прочитать на [официальной странице HyprlandWiki](https://wiki.hyprland.org/Getting-Started/Installation/)
@@ -373,7 +373,7 @@ chmod +x install.sh
 ./install.sh
 ```
 Лучше перейдите на его репозиторий и сами посмотрите что вам потребуется выбирать во время установки.
-![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/)
+![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/Hyprland.jpg)
 ## 5.5 Установка LXQT
 На любое окружение есть темы так что не обязательно они будут выглядеть 1 в 1 как на картинках!
 Этот вариант лучше ставить если у вас слабый компьютер или ноутбук.
@@ -396,7 +396,7 @@ sudo pacman -S libpulse libstatgrab libsysstat lm_sensors oxygen-icons pavucontr
 systemctl enable sddm.service
 ```
 
-![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/)
+![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/Lxqt.jpg)
 # 6. Создание учетной записи обычного пользователя и чучуть о них.
 Кроме того, мы можем предоставить этой учетной записи привилегии sudo. Напишите свое имя вместо “User123”.
 ```bash
@@ -475,11 +475,11 @@ reboot
 Их существует достаточно много, но здесь я покажу только те которые нравятся мне. Я не знаю чем они отличаются так что выбирать буду по визуалу. 
 
 Thunar:
-![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/)
+![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/Thunar.jpg)
 Dolphine:
-![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/)
+![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/Dolphine.jpg)
 Nemo:
-![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/)
+![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/Nemo.jpg)
 
 
 Все картинки взяты из интернета для примерного понимания.
