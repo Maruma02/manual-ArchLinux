@@ -86,7 +86,7 @@ cfdisk /dev/sda  #sda - диск который вы будете размеча
 Рассмотрим наш графический интерфейс:
 ![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/photo_2024-12-14_13-00-59.jpg)
 
-Нажимаю на "New" и задаю размер 512M, этот раздел в будующем будет отвечать за наш grub загрузчик:
+Нажимаю на "New" и задаю размер 512M, этот раздел в будущем будет отвечать за наш grub загрузчик:
 ![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/photo_2024-12-14_13-00-56.jpg)
 
 Далее выбираем вкладку "Type" и выбираем EFI System:
@@ -407,7 +407,7 @@ systemctl enable sddm.service
 ![Image alt](https://github.com/Maruma02/manual-ArchLinux/raw/assets/Lxqt.jpg)
 
 # 6. Создание учетной записи обычного пользователя и чучуть о них.
-Кроме того, мы можем предоставить этой учетной записи привилегии sudo. Напишите свое имя вместо “User123”.
+Напишите свое имя вместо “User123”.
 ```bash
 useradd -m -G wheel user123
 ```
