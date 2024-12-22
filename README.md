@@ -266,6 +266,7 @@ mount /dev/sda1 /boot/efi
 ```bash
 grub-install --target=x86_64-efi --bootloader-id=grub_uefi
 ```
+--bootloader-id=grub_uefi - Вместо grub_uefi пишите название для BIOS
 ```
 Output
 
