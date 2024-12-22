@@ -450,7 +450,7 @@ exit
 ```
 Незабудь размонтировать раздел "/mnt"
 ```bash
-umount /mnt
+umount -R /mnt
 ```
 ```bash
 reboot
