@@ -264,7 +264,7 @@ mount /dev/sda1 /boot/efi
 ```
 Устанавливаем загрузчик:
 ```bash
-grub-install --target=x86_64-efi --bootloader-id=grub_uefi
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --boot-directory=/boot/efi/EFI
 ```
 --bootloader-id=grub_uefi - Вместо grub_uefi пишите название для BIOS
 ```
@@ -273,6 +273,7 @@ Output
 Installing for x86_64-efi platform.
 Installation finished. No error reported
 ```
+Если у вас ошибка с efibootmgr вам поможет эта команда: --no-nvram 
 Генерируем конфигурационный файл "/boot/grub/grub.cfg":
 ```bash
 grub-mkconfig -o /boot/grub/grub.cfg
