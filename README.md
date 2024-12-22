@@ -28,10 +28,17 @@ station wlan0 get-networks
 station wlan0 connect test312
 ```
 Вместо test312 вводите свою Wifi сеть и вводите пароль, при вводе пароля его не будет видно так что вводите внимательно!
+
+Выходим из этого режима:
+```bash
+exit
+```
+
 Проверяем подключились ли мы и есть ли интернет:
 ```bash
 ping google.com
 ```
+
 Если все успешно, то перед вами должен быть такой вывод:
 ```bash
 PING google.com (142.251.1.102) 56(84) bytes of data.
@@ -40,10 +47,6 @@ PING google.com (142.251.1.102) 56(84) bytes of data.
 64 bytes from lb-in-f102.1e100.net (142.251.1.102): icmp_seq=3 ttl=59 time=47.7 ms
 64 bytes from lb-in-f102.1e100.net (142.251.1.102): icmp_seq=4 ttl=59 time=53.7 ms
 64 bytes from lb-in-f102.1e100.net (142.251.1.102): icmp_seq=5 ttl=59 time=47.7 ms
-```
-Выходим из этого режима:
-```bash
-exit
 ```
 
 ## 2. Деление диска на разделы
