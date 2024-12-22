@@ -504,3 +504,14 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 ```
+
+# Преобразование диска MBR в GPT
+
+Для преобразования таблицы разделов MBR в GPT с помощью sgdisk используйте опцию -g/--mbrtogpt:
+```bash
+sgdisk -g /dev/sda
+```
+Для преобразования GPT в MBR используйте опцию -m/--gpttombr. Имейте в виду, что преобразовать более четырёх разделов из GPT в MBR невозможно.
+```bash
+sgdisk -m /dev/sda
+```
