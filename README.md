@@ -267,7 +267,17 @@ Output
 Installing for x86_64-efi platform.
 Installation finished. No error reported
 ```
-Если у вас ошибка с efibootmgr вам поможет эта команда: --no-nvram 
+Если у вас ошибка с efibootmgr вам поможет эта команда:
+```bash
+--no-nvram 
+```
+
+Если у вас ошибка с чем то не понятным на старом ноутбуке должно помочь:
+```bash
+--removable
+```
+
+
 Генерируем конфигурационный файл "/boot/grub/grub.cfg":
 ```bash
 grub-mkconfig -o /boot/grub/grub.cfg
