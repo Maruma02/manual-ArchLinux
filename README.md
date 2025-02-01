@@ -267,6 +267,12 @@ Output
 Installing for x86_64-efi platform.
 Installation finished. No error reported
 ```
+
+Генерируем конфигурационный файл "/boot/grub/grub.cfg":
+```bash
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
 Если у вас ошибка с efibootmgr вам поможет эта команда:
 ```bash
 --no-nvram 
@@ -278,10 +284,6 @@ Installation finished. No error reported
 ```
 
 
-Генерируем конфигурационный файл "/boot/grub/grub.cfg":
-```bash
-grub-mkconfig -o /boot/grub/grub.cfg
-```
 Здесь могут быть решения на ваши проблемы. Так же данная страница будет полезна если вы хотите установить Arch рядом с виндой.
 [Все вот тут. Оффц. про GRUB](https://wiki.archlinux.org/title/GRUB_(Русский)).
 
