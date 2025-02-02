@@ -556,8 +556,8 @@ sgdisk -m /dev/sda
 ```
 
 При установке ArchLinux на старый ноутбук(на BIOS):
-/dev/sda1   32M      BiosBOOT
-/dev/sda2   512M-1G  EFI System
-/dev/sda3    4G      Linux swap
-/dev/sda4    size    Linux Filesystem
-/dev/sda5    size    Linux Filesystem
+/dev/sda1   32M      BiosBOOT \n
+/dev/sda2   512M-1G  EFI System \n
+/dev/sda3    4G      Linux swap \n
+/dev/sda4    size    Linux Filesystem \n
+/dev/sda5    size    Linux Filesystem \n
